@@ -37,3 +37,17 @@ spec:
       port: 80
       targetPort: 3000
   type: LoadBalancer
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: api-ingress-http
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: PathPrefix(`/`)
+    kind: Rule
+    services:
+    - name: memory-api-service
+      port: 80
