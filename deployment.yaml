@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
       - name: memory-api
-        image: tylerpitcher/pyapi:1
+        image: tylerpitcher/pyapi:3-amd64
         resources:
           requests:
             memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "512Mi"
+            cpu: "1000m"
         ports:
         - containerPort: 3000
 ---
